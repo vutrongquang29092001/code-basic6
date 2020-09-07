@@ -47,13 +47,14 @@ public class DatabaseUtil {
     public boolean updateQuery(String query){
         try {
             Statement stmt = connection.createStatement();
-            System.out.println("Executing query "+query);
+            System.out.println("Executing query: "+query);
             stmt.execute(query);
             return true;
         } catch (Exception e) {
             return false;
         }
     }
+   
     public boolean closeConnection(){
         try {
             connection.close();

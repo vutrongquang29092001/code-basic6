@@ -31,6 +31,32 @@ public class BookController {
             
         } catch (Exception e) {
             System.out.println(e);
-        }finall
+        }finally{
+            return ListBook;
+        }
+    }
+    public boolean addBook(BookDTO bookDTO){
+        try {
+            return bookDAO.addBook(bookDTO);
+        } catch (Exception e) {
+            System.out.println(e);
+        }
+        return false ;
+    }
+    public boolean updateBook(BookDTO bookDTO){
+        try {
+            return bookDAO.updateBook(bookDTO);
+        } catch (Exception e) {
+            System.out.println(e);
+        }
+        return false;
+    }
+    public boolean deleteBook(int id){
+        try {
+            return bookDAO.deleteBook(id);
+        } catch (Exception e) {
+            System.out.println(e);
+        }
+        return false;
     }
 }

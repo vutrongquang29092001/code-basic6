@@ -31,4 +31,40 @@ public class BookDAO {
         }
      return bookList ;
     }
+    public boolean addBook(BookDTO bookDTO)throws SQLException{
+        String sql = "Insert into BookDTO values('"+ bookDTO.getName()+"','"+ bookDTO.getPrice() + "')";
+        try {
+            dbUtil.updateQuery(sql);
+            return true;
+        } catch (Exception e) {
+            System.out.println(e);
+        }
+        return false;
+        
+    } 
+    public boolean updateBook(BookDTO bookDTO)throws SQLException{
+        String sql = "Update BookDTO"
+                + " set name = "+bookDTO.getName()+", price = "+bookDTO.getPrice()
+                +"Where id = " + bookDTO.getId() ;
+        try {
+            dbUtil.updateQuery(sql);
+            return true;
+        } catch (Exception e) {
+            System.out.println(e);
+        }
+        return false;
+    }
+    public boolean deleteBook(int id)throws SQLException{
+        String sql = "Delate from BookDTO"
+                + "where id = "+ id;
+        try {
+            dbUtil.executeQuery(sql);
+            return true;
+        } catch (Exception e) {
+            System.out.println(e);
+        }
+        return false;
+    }
+   
+    
 }

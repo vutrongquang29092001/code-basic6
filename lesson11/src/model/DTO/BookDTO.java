@@ -15,7 +15,7 @@ public class BookDTO {
 
     String name;
     int price;
-    String id = UUID.randomUUID().toString();
+    int  id ;
 
     @Override
     public String toString() {
@@ -38,17 +38,18 @@ public class BookDTO {
         this.price = price;
     }
 
-    public String getId() {
+    public int getId() {
         return id;
     }
 
-    public void setId(String id) {
+    public void setId(int id) {
         this.id = id;
     }
 
-    public BookDTO(String name, int price) {
+    public BookDTO(String name, int price,int id) {
         this.name = name;
         this.price = price;
+        this.id = id;
     }
 
     public BookDTO() {
